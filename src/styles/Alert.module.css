@@ -1,0 +1,6 @@
+.outside {
+  @apply fixed h-full w-full top-0 left-0 backdrop-blur-sm bg-black/30 z-50;
+}
+.container {
+  @apply flex gap-3 items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md fixed bg-white rounded-xl p-5 shadow-md;
+}

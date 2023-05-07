@@ -1,0 +1,21 @@
+.outside {
+  @apply fixed h-full w-full top-0 left-0 backdrop-blur-sm bg-black/30 z-50;
+}
+.modal {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md fixed bg-white text-center rounded-xl p-10 shadow-md;
+}
+.modalBody img {
+  @apply mx-auto mb-5 sm:mb-10;
+}
+.modalBody p {
+  @apply mb-5 sm:mb-10;
+}
+.modalBody span {
+  @apply font-bold;
+}
+.modalFooter {
+  @apply flex-col-reverse sm:flex-row flex justify-center items-center gap-5;
+}
+.modalFooter button {
+  @apply w-full;
+}

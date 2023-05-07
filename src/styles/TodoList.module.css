@@ -1,0 +1,3 @@
+.emptyItem {
+  @apply max-w-[767px] mx-auto;
+}

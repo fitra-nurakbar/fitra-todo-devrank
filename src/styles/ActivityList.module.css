@@ -1,0 +1,24 @@
+.emptyItem {
+  @apply max-w-[767px] mx-auto;
+}
+.containerCard {
+  @apply grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-[26px];
+}
+.card {
+  @apply bg-white shadow-lg px-[27px] py-[22px] rounded-xl;
+}
+.cardBody {
+  @apply h-[150px] overflow-hidden;
+}
+.cardBody h3 {
+  @apply text-lg font-bold;
+}
+.cardFooter {
+  @apply flex justify-between;
+}
+.cardFooter span {
+  @apply text-[#888888];
+}
+.cardFooter img {
+  @apply cursor-pointer;
+}
