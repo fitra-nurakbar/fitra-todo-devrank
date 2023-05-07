@@ -26,7 +26,7 @@ export default function Detail() {
 
   return (
     <Layout>
-      <div>Detail {todoId}</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aspernatur ipsum perspiciatis ut laborum similique id libero, voluptas blanditiis. Consequuntur?</div>
       <TodoList />
     </Layout>
   );

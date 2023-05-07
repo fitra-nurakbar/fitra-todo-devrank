@@ -1,0 +1,15 @@
+.outside {
+  @apply fixed h-full w-full top-0 left-0 backdrop-blur-sm bg-black/50 z-50;
+}
+.modal {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md fixed bg-white rounded-xl p-5 shadow-md;
+}
+.modalBody h1 {
+  @apply text-xl font-bold;
+}
+.modalBody p {
+  @apply my-4;
+}
+.modalBody span {
+  @apply flex gap-2 font-semibold underline hover:no-underline mb-4;
+}
