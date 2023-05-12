@@ -1,11 +1,10 @@
-import styles from "@/styles/Dashboard.module.css";
-import Layout from "@/components/Layout";
-import Button from "@/components/Button";
 import ActivityList from "@/components/ActivityList";
-import { useEffect, useState } from "react";
-import Loading from "@/components/Loading";
-import DeleteModal from "@/components/DeleteModal";
 import Alert from "@/components/Alert";
+import DeleteConfirmModal from "@/components/DeleteConfirmModal";
+import Layout from "@/components/Layout";
+import Loading from "@/components/Loading";
+import { useEffect, useState } from "react";
+import ActivityHeader from "../components/ActivityHeader";
 
 export default function Dashboard() {
   const { VITE_BASE_URL, VITE_EMAIL } = import.meta.env;
@@ -20,7 +19,7 @@ export default function Dashboard() {
     title: null,
   });
   const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   // get activity
   const getActivity = async () => {
@@ -35,11 +34,10 @@ export default function Dashboard() {
       setActivities(data);
       setLoading(false);
     } catch (err) {
-      console.log(err);
+      setAlertMessage("Gagal memuat data!!!");
       setLoading(false);
     }
   };
-
   // post activity
   const createActivity = async () => {
     setLoading(true);
@@ -54,11 +52,10 @@ export default function Dashboard() {
 
       getActivity();
     } catch (err) {
-      console.log(err);
+      setAlertMessage("Gagal mengirim data!!!");
       setLoading(false);
     }
   };
-
   // delete activity
   const deleteActivity = async (id) => {
     setLoading(true);
@@ -70,26 +67,28 @@ export default function Dashboard() {
       getActivity();
 
       closeDeleteModal();
-      setAlert(true);
+      setAlertMessage("Activity berhasil dihapus");
     } catch (err) {
       console.log(err);
       setLoading(false);
     }
   };
 
+  // open modal
   function openDeleteModal(id, title) {
     setActivitySelected({ id, title });
+    console.log(id, title)
 
     setDeleteModalOpen(true);
   }
-
+  // close modal
   function closeDeleteModal() {
     setActivitySelected({ id: null, title: null });
     setDeleteModalOpen(false);
   }
-
+  // close alert
   function closeAlert() {
-    setAlert(false);
+    setAlertMessage("");
   }
 
   useEffect(() => {
@@ -98,23 +97,18 @@ export default function Dashboard() {
 
   return (
     <Layout>
-      <div className={styles.todoHeader}>
-        <h2>Activity</h2>
-        <Button onClick={createActivity}>tambah</Button>
-      </div>
-      {alert && <Alert closeAlert={closeAlert} />}
+      <ActivityHeader onClick={createActivity} />
+      {/* alert conditional */}
+      {alertMessage && <Alert closeAlert={closeAlert} message={alertMessage} />}
+      {/* loading conditional & rendering data */}
       {loading ? (
         <Loading />
       ) : (
-        <ActivityList data={activities} openModal={openDeleteModal} />
+        <ActivityList data={activities} openModal={openDeleteModal} addActivity={createActivity} />
       )}
+      {/* modal delete confirm */}
       {deleteModalOpen && (
-        <DeleteModal
-          type={"activity"}
-          selected={activitySelected}
-          closeModal={closeDeleteModal}
-          onDelete={deleteActivity}
-        />
+        <DeleteConfirmModal type={"activity"} selected={activitySelected} closeModal={closeDeleteModal} onDelete={deleteActivity} />
       )}
     </Layout>
   );

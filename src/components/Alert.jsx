@@ -1,7 +1,7 @@
 import styles from "@/styles/Alert.module.css";
 import InformationIcon from "/static/media/modal-information-icon.svg";
 
-export default function Alert({ closeAlert }) {
+export default function Alert({ closeAlert, message }) {
   const handleOutsideClick = (e) => {
     if (!e.target.closest(`.${styles.container}`)) {
       // jika element yang diklik berada di luar container, panggil function untuk menutup alert
@@ -13,7 +13,7 @@ export default function Alert({ closeAlert }) {
     <div className={styles.outside} onClick={handleOutsideClick}>
       <div className={styles.container}>
         <img src={InformationIcon} alt="information" />
-        <span>Activity berhasil dihapus</span>
+        <span>{message}</span>
       </div>
     </div>
   );

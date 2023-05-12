@@ -4,5 +4,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-paper font-poppins;
+  @apply bg-paper font-poppins text-default;
 }

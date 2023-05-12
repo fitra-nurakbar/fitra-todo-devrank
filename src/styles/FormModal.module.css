@@ -1,0 +1,30 @@
+.outside {
+  @apply fixed h-full w-full top-0 left-0 backdrop-blur-sm bg-black/30 z-50;
+}
+.modal {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[830px] fixed bg-white rounded-xl shadow-md;
+}
+.modalHeader {
+  @apply flex justify-between py-6 px-[30px];
+}
+.modalHeader h3 {
+  @apply text-lg font-semibold capitalize;
+}
+.modalHeader img {
+  @apply cursor-pointer mr-[11px];
+}
+.modalBody {
+  @apply py-[38px] pl-[30px] pr-[41px] border-y-2 grid;
+}
+.modalBody label {
+  @apply uppercase font-semibold text-xs mb-[9px];
+}
+.modalBody input {
+  @apply border-2 py-[14px] px-[18px] text-base mb-[26px] rounded-md focus:outline-none focus:border-primary;
+}
+.modalFooter {
+  @apply px-10 pt-[15px] pb-6;
+}
+.modalFooter button {
+  @apply ml-auto;
+}

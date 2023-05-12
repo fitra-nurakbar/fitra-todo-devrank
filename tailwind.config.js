@@ -1,13 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,css}"],
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
@@ -16,6 +9,9 @@ module.exports = {
       colors: {
         paper: {
           DEFAULT: "#F4F4F4",
+        },
+        default: {
+          DEFAULT: "#111111",
         },
         primary: {
           DEFAULT: "rgba(22, 171, 248, 1)",

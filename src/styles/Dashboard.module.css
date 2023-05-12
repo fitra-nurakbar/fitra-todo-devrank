@@ -1,6 +1,6 @@
 .todoHeader {
-  @apply flex flex-wrap justify-between items-center mb-8 gap-3;
+  @apply flex flex-wrap justify-between items-center mb-10 gap-3;
 }
 .todoHeader h2 {
-  @apply text-4xl font-bold capitalize;
+  @apply text-3xl sm:text-4xl font-bold capitalize;
 }

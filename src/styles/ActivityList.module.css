@@ -1,24 +1,24 @@
-.emptyItem {
-  @apply max-w-[767px] mx-auto;
+.empty_item {
+  @apply max-w-[700px] mx-auto cursor-pointer;
 }
-.containerCard {
+.dashboard_content {
   @apply grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-[26px];
 }
 .card {
   @apply bg-white shadow-lg px-[27px] py-[22px] rounded-xl;
 }
-.cardBody {
+.card_body {
   @apply h-[150px] overflow-hidden;
 }
-.cardBody h3 {
+.card_body h3 {
   @apply text-lg font-bold;
 }
-.cardFooter {
+.card_footer {
   @apply flex justify-between;
 }
-.cardFooter span {
+.card_footer span {
   @apply text-[#888888];
 }
-.cardFooter img {
+.card_footer img {
   @apply cursor-pointer;
 }

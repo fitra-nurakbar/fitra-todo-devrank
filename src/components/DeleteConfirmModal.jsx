@@ -1,8 +1,8 @@
 import styles from "@/styles/ModalDelete.module.css";
-import Button from "./Button";
+import Button from "@/components/Button";
 import WarningIcon from "/static/media/modal-delete-icon.svg";
 
-export default function DeleteModal({ type, selected, closeModal, onDelete }) {
+export default function DeleteConfirmModal({ type, selected, closeModal, onDelete }) {
   const handleOutsideClick = (e) => {
     if (!e.target.closest(`.${styles.modal}`)) {
       // jika element yang diklik berada di luar container, panggil function untuk menutup modal
